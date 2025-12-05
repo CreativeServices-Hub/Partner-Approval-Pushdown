@@ -1,0 +1,97 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAP Showcase</title>
+  <style>
+    body {
+      margin: 0;
+      background: #fff;
+      font-family: sans-serif;
+    }
+    .uap-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 32px;
+    }
+    .uap-unit {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .uap-header {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+    iframe {
+      border: 1px solid #ccc;
+      width: 100%;
+      background: transparent;
+    }
+    .separator {
+      border-top: 1px dashed #bbb;
+      margin: 32px 0;
+    }
+    .open-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    .open-buttons a {
+      text-decoration: none;
+      padding: 6px 12px;
+      background: #000;
+      color: #fff;
+      font-size: 12px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="uap-wrapper">
+    <h1 id="title">UAP Showcase</h1>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const titleOverride = urlParams.get('title');
+      const repoName = window.location.pathname.split('/')[1];
+      document.getElementById('title').textContent = titleOverride || repoName || 'UAP Showcase';
+    </script>
+
+    <div class="uap-unit">
+      <div class="uap-header">1280x418</div>
+      <iframe src="uaps/1280x418/1280x418.html" width="1280" height="418"></iframe>
+      <div class="open-buttons">
+        <a href="uaps/1280x418/1280x418.html" target="_blank">Open</a>
+        <a href="uaps/1280x418/1280x418.html?bg=white" target="_blank">Open (white BG)</a>
+      </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="uap-unit">
+      <div class="uap-header">1280x100</div>
+      <iframe src="uaps/1280x100/1280x100.html" width="1280" height="100"></iframe>
+      <div class="open-buttons">
+        <a href="uaps/1280x100/1280x100.html" target="_blank">Open</a>
+        <a href="uaps/1280x100/1280x100.html?bg=white" target="_blank">Open (white BG)</a>
+      </div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div class="uap-unit">
+      <div class="uap-header">300x250</div>
+      <iframe src="uaps/300x250/300x250.html" width="300" height="250"></iframe>
+      <div class="open-buttons">
+        <a href="uaps/300x250/300x250.html" target="_blank">Open</a>
+        <a href="uaps/300x250/300x250.html?bg=white" target="_blank">Open (white BG)</a>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
